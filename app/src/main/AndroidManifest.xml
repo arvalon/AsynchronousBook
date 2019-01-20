@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.arvalon.asynchronousbook">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Needed to check when the network connection changes -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="ru.arvalon.chapter1.MyService" android:exported="false"/>
+
+        <activity android:name="ru.arvalon.chapter1.ExecutorActivity"/>
+        <activity android:name="ru.arvalon.chapter1.RunFromUiActivity"/>
+
+        <activity android:name="ru.arvalon.chapter2.SchedulingWorkActivity"/>
+        <activity android:name="ru.arvalon.chapter2.CancelRunnableActivity"/>
+        <activity android:name="ru.arvalon.chapter2.SpeakActivity"/>
+        <activity android:name="ru.arvalon.chapter2.HandlerExampleActivity"/>
+
+        <activity android:name="ru.arvalon.chapter3.ShowMyPuppyHeadlessActivity"/>
+        <activity android:name="ru.arvalon.chapter3.ShowMyPuppyActivity"/>
+        <activity android:name="ru.arvalon.chapter3.MyPuppyAlbumActivity"/>
+
+        <activity android:name="ru.arvalon.chapter4.WhoIsOnlineActivity"/>
+        <activity android:name="ru.arvalon.chapter4.BitcoinExchangeRateActivity"/>
+        <activity android:name="ru.arvalon.chapter4.AlbumListActivitySimple"/>
+        <activity android:name="ru.arvalon.chapter4.AlbumListActivity"/>
+
+        <activity android:name="ru.arvalon.chapter5.SaveMyLocationActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.CountMsgsFromActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.UploadArtworkActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.Sha1Activity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.Sha1BroadcastUnhActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.Sha1BroacastActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter5.GrepActivity" android:label="@string/app_name"/>
+
+        <service android:name="ru.arvalon.chapter5.SaveMyLocationService" android:enabled="true" />
+
+        <service android:name="ru.arvalon.chapter5.MyIntentService" android:exported="false" />
+
+        <service android:name="ru.arvalon.chapter5.CountMsgsIntentService" android:exported="false" />
+
+        <service android:name="ru.arvalon.chapter5.Sha1HashService" android:exported="false" />
+
+        <service android:name="ru.arvalon.chapter5.Sha1HashBroadcastService" android:exported="false" />
+
+        <service android:name="ru.arvalon.chapter5.Sha1HashBroadCastUnhService" android:exported="false" />
+
+        <service android:name="ru.arvalon.chapter5.GrepService" android:process=":grep_process"/>
+
+        <service android:name="ru.arvalon.chapter5.UploadArtworkIntentService"/>
+
+        <!-- Chapter 6 -->
+
+        <activity android:name="ru.arvalon.chapter6.AlarmActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter6.SMSDispatchActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter6.AlarmClockActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter6.RepeatingAlarmActivity" android:label="@string/app_name"/>
+
+        <service android:name="ru.arvalon.chapter6.SMSDispatcherIntentService"/>
+
+        <receiver android:name="ru.arvalon.chapter6.MyReceiver">
+
+            <intent-filter>
+                <action android:name="my_alarm" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name="ru.arvalon.chapter6.SMSDispatcher">
+
+            <intent-filter>
+                <action android:name="sms_dispatch" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="sms_delivered" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver
+            android:name="ru.arvalon.chapter6.BootBroadcastReceiver" android:enabled="false">
+
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+
+        </receiver>
+
+        <!-- Chapter 7 -->
+
+        <activity android:name="ru.arvalon.chapter7.AccountInfoActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter7.JobListActivity" android:label="@string/app_name"/>
+
+        <service
+            android:name="ru.arvalon.chapter7.AccountBackupJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- Chapter 8 -->
+
+        <activity android:name="ru.arvalon.chapter8.GreetingsActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter8.HelloSSLActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter8.UserInfoActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter8.UserListActivity" android:label="@string/app_name"/>
+
+        <!-- Chapter 9 -->
+
+        <activity android:name="ru.arvalon.chapter9.MyNativeActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter9.ExceptionActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter9.StatsActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter9.ConvertGrayScaleActivity" android:label="@string/app_name"/>
+
+        <activity android:name="ru.arvalon.chapter9.NativeThreadsActivity" android:label="@string/app_name"/>
+
+        <!-- Chapter 10 -->
+
+        <activity android:name="ru.arvalon.chapter10.StartActivity"/>
+
+        <activity android:name="ru.arvalon.chapter10.AccountSettingsActivity"/>
+
+        <service
+            android:name="ru.arvalon.chapter10.AuthService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="ru.arvalon.chapter10.MessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:exported="false"
+            android:name="ru.arvalon.chapter10.MyBackupService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
+        <!-- Chapter 11  -->
+
+        <activity android:name="ru.arvalon.chapter11.MobileNetDetectionActivity"/>
+
+        <activity android:name="ru.arvalon.chapter11.PaginatedActivity"/>
+
+        <activity android:name="ru.arvalon.chapter11.LocationActivity"/>
+
+        <receiver android:name="ru.arvalon.chapter11.MobileNetworkListener"/>
+
+        <!-- Chapter 12 Android Components -->
+
+        <activity android:name="ru.arvalon.chapter12.HelloRxJava"/>
+
+        <activity android:name="ru.arvalon.chapter12.RxSchedulerActivity"/>
+
+        <activity android:name="ru.arvalon.chapter12.SubjectActivity"/>
+
+        <activity android:name="ru.arvalon.chapter12.ZipActivity" />
+
+        <activity android:name="ru.arvalon.chapter12.RxListActivity"/>
+
+    </application>
+
+</manifest>
