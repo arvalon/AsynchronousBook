@@ -22,6 +22,7 @@ import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
@@ -32,6 +33,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import ru.arvalon.logs.Logs;
 
 
 public class Sha1HashService extends Service {
@@ -113,16 +116,19 @@ public class Sha1HashService extends Service {
         final WeakReference<ResultCallback<String>> ref = new WeakReference<>(callback);
 
         Runnable runnable = () -> {
-            Log.i("Sha1HashService", "Hashing text "+text+" on Thread "+
+            Logs.info(this, "Hashing text "+text+" on Thread "+
                                       Thread.currentThread().getName());
+
+            SystemClock.sleep(4000);
+
             try {
                 // Execute the Long Running Computation
                 final String digest = SHA1(text);
-                Log.i("Sha1HashService", "Hash result for "+text+" is "+digest);
+                Logs.info(this, "Hash result for "+text+" is "+digest);
                 // Execute the Runnable on UI Thread
                 postResultOnUI(digest, ref);
             } catch (Exception e){
-                Log.e("Sha1HashService", "Hash failed", e);
+                Logs.error(this, "Hash failed "+e.getMessage(), e);
             }
         };
         // Submit the Runnable on the ThreadPool
@@ -135,7 +141,7 @@ public class Sha1HashService extends Service {
     @Override
     public void onCreate() {
 
-        Log.i("Sha1HashService", "Starting Hashing Service");
+        Logs.info(this, "Starting Hashing Service");
         super.onCreate();
 
         mExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, 5,
@@ -147,7 +153,7 @@ public class Sha1HashService extends Service {
 
     @Override
     public void onDestroy() {
-        Log.i("Sha1HashService", "Stopping Hashing Service");
+        Logs.info(this, "Stopping Hashing Service");
         super.onDestroy();
         mExecutor.shutdown();
     }
