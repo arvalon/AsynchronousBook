@@ -18,13 +18,13 @@ Many of the examples will work on a device running any version of Android since
 2.3, GingerBread. Some examples demonstrate newer APIs and as a result, require a 
 more recent Android version—up to Android 5, Lollipop.
 
-##Related Books
+## Related Books
 
 * [Android Native Development Kit Cookbook](https://www.packtpub.com/application-development/android-native-development-kit-cookbook?utm_source=Github&utm_medium=repository&utm_campaign=9781849691505)
 * [Oracle Identity and Access Manager 11g for Administrators](https://www.packtpub.com/application-development/android-30-application-development-cookbook?utm_source=Github&utm_medium=repository&utm_campaign=9781849512947)
 * [Asynchronous Android](https://www.packtpub.com/application-development/asynchronous-android?utm_source=Github&utm_medium=repository&utm_campaign=9781783286874)
 
-###Проверить сообщение
+### Проверить сообщение
 * [Author blog](http://hvasconcelos.github.io/articles/Asynchronous-Android-Programming-is-out-now)
 * [Publisher page](https://www.packtpub.com//application-development/asynchronous-android-programming-second-edition)
 
