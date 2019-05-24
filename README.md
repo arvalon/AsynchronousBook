@@ -1,9 +1,8 @@
 # Asynchronous Android Programming
 
 This is the code repository for [Asynchronous Android Programming](https://www.packtpub.com/application-development/asynchronous-android-programming?utm_source=Github&utm_medium=repository&utm_campaign=9781785883248), published by [Packt Publishing](https://www.packtpub.com/). It contains all the required files to run the code.
-####Ручной перенос глав из устаревшего проекта
 
-##What you need for this book
+## What you need for this book
 
 To follow along and experiment with the examples, you will need a development 
 computer with a Java 7 (or 8) SE Development Kit and the Android Software 
@@ -23,8 +22,3 @@ more recent Android version—up to Android 5, Lollipop.
 * [Android Native Development Kit Cookbook](https://www.packtpub.com/application-development/android-native-development-kit-cookbook?utm_source=Github&utm_medium=repository&utm_campaign=9781849691505)
 * [Oracle Identity and Access Manager 11g for Administrators](https://www.packtpub.com/application-development/android-30-application-development-cookbook?utm_source=Github&utm_medium=repository&utm_campaign=9781849512947)
 * [Asynchronous Android](https://www.packtpub.com/application-development/asynchronous-android?utm_source=Github&utm_medium=repository&utm_campaign=9781783286874)
-
-### Проверить сообщение
-* [Author blog](http://hvasconcelos.github.io/articles/Asynchronous-Android-Programming-is-out-now)
-* [Publisher page](https://www.packtpub.com//application-development/asynchronous-android-programming-second-edition)
-
