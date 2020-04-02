@@ -67,11 +67,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        populateList();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setTitle("Android Asynchronous Programming");
+        }
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setTitle("Android Asynchronous Programming");
+        populateList();
 
         mRecyclerView = findViewById(R.id.exampleList);
         mRecyclerView.setHasFixedSize(true);

@@ -6,11 +6,13 @@
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/gradle.xml
-.idea/codeStyles/
+/.idea/codeStyles/
 /.idea/assetWizardSettings.xml
-.idea/markdown-navigator/
-.idea/markdown-navigator.xml
+/.idea/markdown-navigator-enh.xml
+/.idea/markdown-navigator/
+/.idea/markdown-navigator.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+/chapter9/.cxx/
