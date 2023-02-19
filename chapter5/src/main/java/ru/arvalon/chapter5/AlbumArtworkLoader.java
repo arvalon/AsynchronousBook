@@ -21,7 +21,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 import android.util.Log;
 
 import java.io.IOException;

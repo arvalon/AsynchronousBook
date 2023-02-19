@@ -17,7 +17,7 @@ package ru.arvalon.chapter6;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.support.v4.content.WakefulBroadcastReceiver;
+import androidx.legacy.content.WakefulBroadcastReceiver;
 import android.telephony.SmsManager;
 import android.util.Log;
 

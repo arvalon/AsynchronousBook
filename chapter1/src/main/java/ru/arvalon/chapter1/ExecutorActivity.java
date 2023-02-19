@@ -17,7 +17,7 @@ package ru.arvalon.chapter1;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 

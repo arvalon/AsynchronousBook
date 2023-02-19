@@ -23,14 +23,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.view.View;
-import android.widget.AdapterView;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager.LoaderCallbacks;
+import androidx.core.content.ContextCompat;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+
 import android.widget.GridView;
 
 public class UploadArtworkActivity extends FragmentActivity implements LoaderCallbacks<Cursor> {

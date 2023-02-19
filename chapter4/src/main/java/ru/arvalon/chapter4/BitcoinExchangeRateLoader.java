@@ -17,7 +17,7 @@ package ru.arvalon.chapter4;
 
 import android.content.Context;
 import android.os.Handler;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 import android.util.Log;
 
 import org.json.JSONObject;

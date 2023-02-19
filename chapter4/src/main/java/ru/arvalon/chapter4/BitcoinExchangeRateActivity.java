@@ -16,7 +16,7 @@
 package ru.arvalon.chapter4;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 public class BitcoinExchangeRateActivity extends FragmentActivity {
 

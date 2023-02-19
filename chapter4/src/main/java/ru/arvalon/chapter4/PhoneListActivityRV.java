@@ -19,14 +19,15 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.provider.ContactsContract;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class PhoneListActivityRV extends FragmentActivity
-        implements  android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor> {
+        implements  LoaderManager.LoaderCallbacks<Cursor> {
 
     public static final int PHONE_LIST_LOADER = "phone_list".hashCode();
     private RecyclerView mRecyclerView;

@@ -1,18 +1,16 @@
 package ru.arvalon.asynchronousbook;
 
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ru.arvalon.chapter1.ExecutorActivity;
 import ru.arvalon.chapter1.RunFromUiActivity;
-import ru.arvalon.chapter10.AccountSettingsActivity;
-import ru.arvalon.chapter10.StartActivity;
 import ru.arvalon.chapter11.LocationActivity;
 import ru.arvalon.chapter11.MobileNetDetectionActivity;
 import ru.arvalon.chapter11.PaginatedActivity;
@@ -127,9 +125,6 @@ public class MainActivity extends AppCompatActivity {
         examples.add(new Example("Chap.9 - Native Threads", NativeThreadsActivity.class));
         examples.add(new Example("Chap.9 - Wrapping Native Objects", StatsActivity.class));
         examples.add(new Example("Chap.9 - Exception Handling", ExceptionActivity.class));
-
-        examples.add(new Example("Chap.10 - Start Activity", StartActivity.class));
-        examples.add(new Example("Chap.10 - Firebase JobDispatcher", AccountSettingsActivity.class));
 
         examples.add(new Example("Chap.11 - Post Event", MobileNetDetectionActivity.class));
         examples.add(new Example("Chap.11 - Post Sticky Event", LocationActivity.class));

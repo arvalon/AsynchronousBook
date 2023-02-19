@@ -27,7 +27,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -96,7 +97,8 @@
 
         <service android:name="ru.arvalon.chapter6.SMSDispatcherIntentService"/>
 
-        <receiver android:name="ru.arvalon.chapter6.MyReceiver">
+        <receiver android:name="ru.arvalon.chapter6.MyReceiver"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="my_alarm" />
@@ -104,7 +106,8 @@
 
         </receiver>
 
-        <receiver android:name="ru.arvalon.chapter6.SMSDispatcher">
+        <receiver android:name="ru.arvalon.chapter6.SMSDispatcher"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="sms_dispatch" />
@@ -117,7 +120,8 @@
         </receiver>
 
         <receiver
-            android:name="ru.arvalon.chapter6.BootBroadcastReceiver" android:enabled="false">
+            android:name="ru.arvalon.chapter6.BootBroadcastReceiver" android:enabled="false"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -156,34 +160,6 @@
         <activity android:name="ru.arvalon.chapter9.ConvertGrayScaleActivity" android:label="@string/app_name"/>
 
         <activity android:name="ru.arvalon.chapter9.NativeThreadsActivity" android:label="@string/app_name"/>
-
-        <!-- Chapter 10 -->
-
-        <activity android:name="ru.arvalon.chapter10.StartActivity"/>
-
-        <activity android:name="ru.arvalon.chapter10.AccountSettingsActivity"/>
-
-        <service
-            android:name="ru.arvalon.chapter10.AuthService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
-
-        <service
-            android:name="ru.arvalon.chapter10.MessageService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
-
-        <service
-            android:exported="false"
-            android:name="ru.arvalon.chapter10.MyBackupService">
-            <intent-filter>
-                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
-            </intent-filter>
-        </service>
 
         <!-- Chapter 11  -->
 

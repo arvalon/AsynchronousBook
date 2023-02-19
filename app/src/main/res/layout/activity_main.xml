@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <!-- A RecyclerView with some commonly used attributes -->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:padding="20dp"
         android:id="@+id/exampleList"
         android:scrollbars="vertical"

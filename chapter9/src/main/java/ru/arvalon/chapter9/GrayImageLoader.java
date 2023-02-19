@@ -18,7 +18,7 @@ package ru.arvalon.chapter9;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 import android.util.Log;
 
 public class GrayImageLoader extends AsyncTaskLoader<Result<Bitmap>> {

@@ -16,13 +16,11 @@
 package ru.arvalon.chapter3;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 
 public class ShowMyPuppyHeadlessActivity extends AppCompatActivity
