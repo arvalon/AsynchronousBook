@@ -3,6 +3,8 @@ package ru.arvalon.asynchronousbook;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setTitle("Android Asynchronous Programming");
         }
+
+        ((TextView)findViewById(R.id.version_textlabel)).setText("v."+BuildConfig.VERSION_NAME);
 
         populateList();
 
