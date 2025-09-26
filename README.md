@@ -1,5 +1,7 @@
 # Asynchronous Android Programming
 
+![Book cover](https://content.packt.com/_/image/original/B05062/cover_image.jpg)
+
 This is the code repository for [Asynchronous Android Programming](https://www.packtpub.com/en-us/product/asynchronous-android-programming-9781785885518). It contains all the required files to run the code.
 
 ## What you need for this book
