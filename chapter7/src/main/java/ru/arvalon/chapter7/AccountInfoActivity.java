@@ -15,6 +15,8 @@
  */
 package ru.arvalon.chapter7;
 
+import static ru.arvalon.chapter7.MyJobService.LOGTAG;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.job.JobInfo;
@@ -105,19 +107,39 @@ public class AccountInfoActivity extends Activity {
         bundle.putString(SyncTask.SYNC_PATH_KEY, SYNC_PATH);
 
         ComponentName serviceName = new ComponentName(this, AccountBackupJobService.class);
+
+        ComponentName serviceName2 = new ComponentName(this, MyJobService.class);
+
         JobInfo.Builder builder = null;
 
         if (isPeriodic) {
             builder = new JobInfo.Builder(SYNC_PER_JOB_ID, serviceName);
             builder.setPersisted(true);
-            builder.setPeriodic(TimeUnit.HOURS.toMillis(12L));
+            builder.setPeriodic(5000);
 
         } else {
             builder = new JobInfo.Builder(SYNC_JOB_ID, serviceName);
-            builder.setOverrideDeadline(TimeUnit.HOURS.toMillis(8L));
+            builder.setOverrideDeadline(5000);
         }
 
         builder.setRequiresCharging(true)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                .setRequiresDeviceIdle(true)
+                .setExtras(bundle);
+
+        JobInfo.Builder builder2 = null;
+
+        if (isPeriodic) {
+            builder2 = new JobInfo.Builder(SYNC_PER_JOB_ID, serviceName2);
+            builder2.setPersisted(true);
+            builder2.setPeriodic(5000);
+
+        } else {
+            builder2 = new JobInfo.Builder(SYNC_JOB_ID, serviceName2);
+            builder2.setOverrideDeadline(5000);
+        }
+
+        builder2.setRequiresCharging(true)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                 .setRequiresDeviceIdle(true)
                 .setExtras(bundle);
@@ -134,6 +156,16 @@ public class AccountInfoActivity extends Activity {
             Toast.makeText(AccountInfoActivity.this,
                     "SharedPrefBack job successfully scheduled",
                     Toast.LENGTH_SHORT).show();
+        }
+
+        int result2 = jobScheduler.schedule(builder2.build());
+
+        if ( result2 == JobScheduler.RESULT_SUCCESS) {
+            Log.d(LOGTAG, "JobScheduler RESULT_SUCCESS");
+            Toast.makeText(this, "JobScheduler RESULT_SUCCESS", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.d(LOGTAG, "JobScheduler RESULT_FAILURE");
+            Toast.makeText(this, "JobScheduler RESULT_FAILURE", Toast.LENGTH_SHORT).show();
         }
     }
 
